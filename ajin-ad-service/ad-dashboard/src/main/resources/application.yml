@@ -1,0 +1,24 @@
+# 配置端口号和项目的根路径
+server:
+  port: 7002
+
+
+# Spring相关配置
+spring:
+  application:
+    name: ad-dashboard
+
+# 将应用程序注册到（服务注册中心）eureka Server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8000/eureka/
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+

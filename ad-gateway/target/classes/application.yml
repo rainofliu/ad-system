@@ -1,0 +1,25 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: ad-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8000/eureka/
+# 设置网关的前缀，以及需要路由的请求(不过滤前缀）
+zuul:
+  prefix: /ajin
+  routes:
+    sponsor:
+      path: /ad-sponsor/**
+      serviceId: eureka-client-ad-sponsor
+      strip-prefix: false
+    search:
+      path: /ad-search/**
+      serviceId: eureka-client-ad-search
+      strip-prefix: false
+
+
+# eg: http://127.0.0.1:9000/ajin/ad-sponsor/create/**

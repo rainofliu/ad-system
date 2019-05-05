@@ -1,0 +1,17 @@
+package com.ajin.ad.annotation;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+/**
+ * @Auther: ajin
+ * @Date: 2019/4/4 21:07
+ */
+// 类和方法上可使用该注解
+@Target({ElementType.TYPE,ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface IgnoreResponseAdvice {
+
+}
